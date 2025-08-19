@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="../dist/main.css">
+    <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +76,8 @@
                     </h1>
                 </div>
                 <div class="px-4 m-4">
-                    <h1 class="text-white font-regular font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
+                    <h1 class="text-white font-regulgit commi
+t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
                         YS: A minigame that uses public transit! (or planes)
                     </h1>
                     <h1 class="text-white font-regular font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
@@ -105,12 +106,28 @@
         </h1>
         </div>
         <div class="flex flex-col items-center">
+             <details class="border-b w-[97%] ml-4 mr-4">
+                <summary class="cursor-pointer p-4 font-medium font-['Inter'] bg-blue-500 text-white rounded">
+                    How do I use transit APIs?/How do I get info from transit agencies?
+                </summary>
+                <h1 class="p-4 text-white font-['inter'] font-semibold">
+                    Most transit APIs use <a class="text-blue-500" href="https://en.wikipedia.org/wiki/GTFS">GTFS</a> (General Transit Feed Specification), or if you want real time info, GTFS-rt (rt for realtime). <br> GTFS should come in a ZIP, and when unzipped, contain .txt files (which are actually csv files!) <br> Parse using whatever your language uses for csv parsing from there, and extract data! <br> <br>GTFS-rt is harder to parse as it uses .proto and <a class="text-blue-500" href="https://developers.google.com/transit/gtfs-realtime/">works differently</a>! Some libraries may help, but I recommend looking at docs (especially <a class="text-blue-500" href="https://developers.google.com/transit/gtfs-realtime/"> Google's docs</a>) for help! <br> You will also certainly find <a class="text-blue-500" href="https://gtfs.org/resources/producing-data/">this</a> useful, as it contains many libraries for GTFS parsing! <br> Finally, <strong>I highly recommend you read</strong> <a class="text-blue-500" href="https://carto.com/blog/gtfs-data">this</a> blog post, it is extremely helpful and walks you through more about what GTFS is, contains, and where the data can be found! <br> psst, you may also want to check if your local transit system runs a developer API :3c
+                </h1>
+            </details>
+            <details class="border-b w-[97%] ml-4 mr-4">
+                <summary class="cursor-pointer p-4 font-medium font-['Inter'] bg-blue-500 text-white rounded">
+                    Do you have any examples?
+                </summary>
+                <h1 class="p-4 text-white font-['inter'] font-semibold">
+                    Yea! It's called KnoWMATA (because it's WMATA), and it is a very simple website demonstrating a few features (check the backend!) <br> Find the GitHub <a class="text-blue-500" href="https://github.com/thisiscid/KnoWMATA">here</a>!
+                </h1>
+            </details>
             <details class="border-b w-[97%] ml-4 mr-4">
                 <summary class="cursor-pointer p-4 font-medium font-['Inter'] bg-blue-500 text-white rounded">
                     Hey, what exactly can I submit?
                 </summary>
                 <h1 class="p-4 text-white font-['inter'] font-semibold">
-                    Good question! As long as its accessible on mobile, gamifies transit, and uses real data and can be played in real life, you are free to submit it! (and if you can find a way to involve planes, then that's super silly and you can totally submit it :D)
+                    Good question! As long as its accessible on mobile, gamifies transit, and uses real data and can be played in real life, you are free to submit it! (and if you can find a way to involve planes, then that's super silly and you can totally submit it :D) <br> it's highly recommended to do an app that utilizes your local transit system (for ease of demonstrating that it works), but if not, it is 100% okay to have data from another system (and have your app work in that system!)
                 </h1>
             </details>
             <details class="border-b w-[97%] ml-4 mr-4">
@@ -142,6 +159,12 @@
                     Public transit + planes! If you have another form of transit in mind dm @niko on slack to see if you can use it!
                 </h1>
             </details>
+        </div>
+        <div class="bg-[#111111]">
+            <div class="flex justify-between border-b border-gray-600 px-4 m-4">
+            <h1 class="bg-[#111111] text-white text-2xl font-['Inter'] font-semibold tracking-tight">
+                Idea generator
+            </h1>
         </div>
         <div class="bg-[#111111]">
             <div class="flex justify-between border-b border-gray-600 px-4 m-4">
