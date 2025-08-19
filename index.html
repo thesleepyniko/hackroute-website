@@ -15,6 +15,7 @@
 </head>
 <body onload="brython()">
     <div class="min-h-screen bg-[#111111] border-[12px] border-black">
+        <div class="text-yellow-500"></div>
         <div class="bg-blue-500 flex items-center mx-auto my-6 max-w-[97%] rounded-lg shadow-lg p-4">
             <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4d38a9f9b4ffbf1c1054517b8ddbf77553d0aabe_monochrome__transit__transparent_.svg" 
                 width="80" 
@@ -37,7 +38,7 @@
                 class="ml-16"
                 id="icon-1">
             <div class="flex flex-col ml-20">
-                <h1 id="direction-1"class="text-white text-4xl font-semibold font-['inter']">
+                <h1 id="direction-1" class="text-white text-4xl font-semibold font-['inter']">
                     
                 </h1>
                 <h1 class="text-white font-semibold font-['inter']" id="towards-1">
@@ -76,8 +77,7 @@
                     </h1>
                 </div>
                 <div class="px-4 m-4">
-                    <h1 class="text-white font-regulgit commi
-t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
+                    <h1 class="text-white font-regular font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
                         YS: A minigame that uses public transit! (or planes)
                     </h1>
                     <h1 class="text-white font-regular font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
@@ -98,7 +98,7 @@ t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1
                     RSVP now!
                 </h1>
                 <h1 class="text-white font-regualr font-['inter'] text-[clamp(1.25rem,2vw,2.25rem)] text-left">
-                    Also join #hackroute on slack :D
+                    Also join <a class="text-blue-500" href="https://hackclub.slack.com/archives/C09AYLTER8R">#hackroute</a> on slack :D
                 </h1>
             </div>
         <h1 class="bg-[#111111] text-white text-2xl font-['Inter'] font-semibold tracking-tight px-4 m-4 border-b border-gray-600">
@@ -165,6 +165,25 @@ t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1
             <h1 class="bg-[#111111] text-white text-2xl font-['Inter'] font-semibold tracking-tight">
                 Idea generator
             </h1>
+            
+        </div>
+        <div class="p-4 m-4">
+            <div class="flex items-center justify-between">
+                <div class="flex-col items-center space-x-4">
+                    <h1 id="idea-1" class="text-white font-semibold font-['inter'] text-xl">
+                        
+                    </h1>
+                    <h1 id="idea-2" class="text-white font-semibold font-['inter'] text-xl">
+                        
+                    </h1>
+                    <h1 id="idea-3" class="text-white font-semibold font-['inter'] text-xl">
+                        
+                    </h1>
+                </div>
+                <button id="idea-btn" class="text-3xl bg-blue-500 hover:bg-blue-400 text-white font-bold py-4 px-20 border-b-4 border-blue-700 hover:border-blue-500 rounded" >
+                    Generate idea!
+                </button>
+            </div>
         </div>
         <div class="bg-[#111111]">
             <div class="flex justify-between border-b border-gray-600 px-4 m-4">
@@ -189,7 +208,7 @@ t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1
                 </h1>
             </div>
             <div class="flex flex-col ml-auto">
-                <h1 id="status-2"class="text-white font-semibold font-['inter'] text-4xl">
+                <h1 id="status-2" class="text-white font-semibold font-['inter'] text-4xl">
 
                 </h1>
                 <h1 id="status-extra-2" class="text-white font-semibold font-['inter'] text-right">
@@ -222,8 +241,7 @@ t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1
         </div>
         <footer class="bg-[#111111] text-gray-400 text-xs py-4 border-gray-700">
             <div class="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center text-center text-white font-['Inter']">
-                <p class="text-xs">Operated by Hackpines Transit Authority - Democratic Republic of Hack Club </p>
-                <p>Made with &lt;3 by @niko </p>
+                <p class="text-xs">Operated by Hackpines Transit Authority - Democratic Republic of Hack Club</p>
             </div>
         </footer>
     </div>
@@ -231,7 +249,7 @@ t -m "add requirements.txt and change some stuff"ar font-['inter'] text-[clamp(1
 
 <script type="text/python">
 import random
-from browser import document
+from browser import document, html
 
 southbound_construction=False
 lines=[
@@ -239,9 +257,23 @@ lines=[
         {"direction": "Northbound", "towards": "to Codium Central | Connnections to Light Rail @ Codium Central", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d767e88af441ca4156e4a0884498e031c0a11289_outermetro_connect.svg", "alt": "Teal box with a red circle containing a 1 on the middle left, the words line 1 on the middle right, and OuterMetro Connect centered below the middle."},
         {"direction": "Southbound", "towards": "to Junya St | Via Cyrillic St., Connections to S2 @ Valerie Sq.", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d767e88af441ca4156e4a0884498e031c0a11289_outermetro_connect.svg", "alt": "Teal box with a red circle containing a 1 on the middle left, the words line 1 on the middle right, and OuterMetro Connect centered below the middle."},
         {"direction": "Southbound", "towards": "to Cyrillic St. | Terminates early due to construction", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d767e88af441ca4156e4a0884498e031c0a11289_outermetro_connect.svg", "alt": "Teal box with a red circle containing a 1 on the middle left, the words line 1 on the middle right, and OuterMetro Connect centered below the middle."},
-        {"direction": "Clockwise", "towards": "via loop | Does not terminate", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/29f513f8d6f71619924b1664de1878807331ef08_line_2-metro_orbital.svg", "alt": "Teal box with a green circle containing a 2 on the middle left, the words line 2 on the middle right, and Metro Orbital centered below the middle."}
+        {"direction": "Clockwise", "towards": "via loop | Does not terminate", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/29f513f8d6f71619924b1664de1878807331ef08_line_2-metro_orbital.svg", "alt": "Teal box with a green circle containing a 2 on the middle left, the words line 2 on the middle right, and Metro Orbital centered below the middle."},
+        {"direction": "Counterclockwise", "towards": "via loop | Does not terminate", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/29f513f8d6f71619924b1664de1878807331ef08_line_2-metro_orbital.svg", "alt": "Teal box with a green circle containing a 2 on the middle left, the words line 2 on the middle right, and Metro Orbital centered below the middle."},
+        {"direction": "Clockwise", "towards": "to Valerie Pl. | Special service, terminates early", "img": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/29f513f8d6f71619924b1664de1878807331ef08_line_2-metro_orbital.svg", "alt": "Teal box with a green circle containing a 2 on the middle left, the words line 2 on the middle right, and Metro Orbital centered below the middle."}
 ]
 ids=[1,2, 3]
+idea_button = document["idea-btn"]
+
+def get_random_transport(click):
+    transport_modes = ["subway", "bus", "regional rail", "bike share"]
+    transport_goals = ["reach the farthest terminus", "beat the peak-hour timer", "complete a color-loop", "optimize fare spend", "least transfers", "hit all wheelchair-accessible stops only", "transfer at least N times", "hunt for a station with clues from GTFS"]
+    transport_interaction = ["co-op", "versus", "team versus"]
+    mode=random.choice(transport_modes)
+    goal=random.choice(transport_goals)
+    interaction=random.choice(transport_interaction)
+    document["idea-1"].text = f"The goal of your game is {goal}!"
+    document["idea-2"].text = f"The transit mode of your game is {mode}!"
+    document["idea-3"].text = f"Your game type is going to be {interaction}!"
 
 def get_random_status(southbound_construction):
     car_choices = [4, 6, 8]
@@ -256,6 +288,7 @@ def next_trains_status():
     time_choices = ["ARR", 1, 2]
     return random.choice(time_choices)
 
+idea_button.bind("click", get_random_transport)
 
 for i in ids:
     line=random.choice(lines)
