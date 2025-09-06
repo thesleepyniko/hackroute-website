@@ -14,7 +14,31 @@
     <script type="text/javascript" src="brython_stdlib.js"></script>
 </head>
 <body onload="brython()">
-    <div class="min-h-screen bg-[#111111] border-[12px] border-black">
+    <div class="bg-yellow-500 items-center shadow-lg p-4 h-16 fixed top-0 w-full z-10 flex justify-center">
+        <div id="banner-wrapper" class="w-full overflow-hidden whitespace-nowrap">
+            <div id="track" class="inline-flex items-center will-change-transform animate-marquee">
+                <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+                <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+                 <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+                 <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+                 <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+                 <span class="text-white text-3xl font-bold font-['Inter'] px-16 shrink-0" aria-hidden="true">
+                    Coming soon! Make sure to RSVP now!
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="min-h-screen bg-[#111111] border-[12px] border-black pt-20">
         <div class="text-yellow-500"></div>
         <div class="bg-blue-500 flex items-center mx-auto my-6 max-w-[97%] rounded-lg shadow-lg p-4">
             <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/4d38a9f9b4ffbf1c1054517b8ddbf77553d0aabe_monochrome__transit__transparent_.svg" 
@@ -241,7 +265,7 @@
         </div>
         <footer class="bg-[#111111] text-gray-400 text-xs py-4 border-gray-700">
             <div class="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center text-center text-white font-['Inter']">
-                <p class="text-xs">Operated by Hackpines Transit Authority - Democratic Republic of Hack Club</p>
+                <p class="text-m">Made with &lt;3 by @niko</p>
             </div>
         </footer>
     </div>
@@ -249,7 +273,7 @@
 
 <script type="text/python">
 import random
-from browser import document, html
+from browser import document, html, window
 
 southbound_construction=False
 lines=[
@@ -313,3 +337,4 @@ for i in ids:
     document[f"status-extra-{i}"].html = f'{status["car_number"]} <i class="fa-solid fa-train"></i> | {status["speed_number"]}'
 
 </script>
+<!-- i wonder if we can get a scrolling banner? -->
