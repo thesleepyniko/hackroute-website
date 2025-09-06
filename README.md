@@ -16,7 +16,7 @@ It was made with html, brython (python for the frontend), and Tailwind! Had to r
 
 ## What'd you struggle with and what'd you learn?
 
-Struggled alot with divs, flex, and all the quirks of html I suppose. I did learn how to make a somewhat okay website, how to do a marquee, and also tailwind and more web dev!
+Struggled alot with divs, flex, and all the quirks of html I suppose. I did learn how to make a somewhat okay website, how to do a marquee, and also tailwind and more web dev! Also, brython :3
 
 
 
